@@ -1,0 +1,70 @@
+{
+  "name": "climate-games-database",
+  "author": "Ian G <yo.ian.g@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc --pretty --noEmit",
+    "format": "prettier --write .",
+    "lint": "eslint . --ext ts --ext tsx --ext js",
+    "test": "jest",
+    "test-all": "npm run lint && npm run type-check && npm run test",
+    "bundle-analyze": "BUNDLE_ANALYZE=true npm run build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run type-check"
+    }
+  },
+  "lint-staged": {
+    "*.@(ts|tsx)": [
+      "npm run lint",
+      "npm run format"
+    ]
+  },
+  "dependencies": {
+    "@adorkable/eunomia-typescript": "^0.3.3",
+    "@rollbar/react": "^0.8.0",
+    "googleapis": "^83.0.0",
+    "next": "latest",
+    "plotly.js": "^2.3.1",
+    "rc-checkbox": "^2.3.2",
+    "react": "^17.0.2",
+    "react-data-table-component": "^7.0.0-rc2",
+    "react-dom": "^17.0.2",
+    "react-plotly.js": "^2.5.1",
+    "react-query": "^3.19.1",
+    "react-resize-detector": "^6.7.4",
+    "react-select": "^4.3.1",
+    "rollbar": "^2.24.0",
+    "styled-components": "^5.3.0"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^11.0.1",
+    "@testing-library/react": "^11.2.7",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.12.4",
+    "@types/plotly.js": "^1.54.13",
+    "@types/react": "^17.0.11",
+    "@types/react-plotly.js": "^2.5.0",
+    "@types/react-select": "^4.0.17",
+    "babel-jest": "^27.0.2",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^11.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "husky": "^6.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.0.4",
+    "jest-watch-typeahead": "^0.6.4",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.4"
+  }
+}
